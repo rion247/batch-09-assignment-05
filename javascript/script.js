@@ -24,11 +24,12 @@ for (const iterator of seatBooking) {
 
         if (event.target.id == currentSeat) {
             setBackGroundColor(currentSeat);
-            td('resultPrint', currentSeat);
-            td('resultPrint', "Economoy");
-            td('resultPrint', ticketPrice);
         }
-        
+
+        td('resultPrint', currentSeat);
+        td('resultPrint', "Economoy");
+        td('resultPrint', ticketPrice);
+
         const selectSeatNumber = stringToNumber('select-seat');
         const seatLeftNumber = stringToNumber('seat-left');
 
@@ -46,6 +47,13 @@ for (const iterator of seatBooking) {
 
         const totalPrice = selectSeat * ticketPrice;
         setInnerText('total-price', totalPrice);
+
+        const applyButton = document.getElementById('apply-button');
+
+        if (selectSeat === 4) {
+
+            applyButton.removeAttribute("disabled");
+        }
 
     })
 }
