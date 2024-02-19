@@ -33,3 +33,10 @@
     transition: visibility 0s linear 0s, opacity 0.25s, transform 0.25s;
 }
 
+#resultPrint tr{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+

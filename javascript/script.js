@@ -14,21 +14,17 @@ window.addEventListener('click', function (event) {
 const seatBooking = document.getElementsByClassName('commonClassName');
 
 for (const iterator of seatBooking) {
-    iterator.addEventListener('click', function (event) {
+    iterator.addEventListener('click', function totalPrice(event) {
 
         const ticketPrice = 550;
 
         const currentSeat = event.target.id;
-        console.log(currentSeat);
         setBackGroundColor(currentSeat);
 
         if (event.target.id == currentSeat) {
             setBackGroundColor(currentSeat);
         }
 
-        td('resultPrint', currentSeat);
-        td('resultPrint', "Economoy");
-        td('resultPrint', ticketPrice);
 
         const selectSeatNumber = stringToNumber('select-seat');
         const seatLeftNumber = stringToNumber('seat-left');
@@ -43,10 +39,10 @@ for (const iterator of seatBooking) {
         } else {
             const seatLeft = seatLeftNumber - 1;
             setInnerText('seat-left', seatLeft);
+            td('resultPrint', currentSeat);
+            const totalPrice = selectSeat * ticketPrice;
+            setInnerText('total-price', totalPrice);
         }
-
-        const totalPrice = selectSeat * ticketPrice;
-        setInnerText('total-price', totalPrice);
 
         const applyButton = document.getElementById('apply-button');
 
@@ -57,3 +53,23 @@ for (const iterator of seatBooking) {
 
     })
 }
+
+document.addEventListener( 'click', function grandTotal() {
+
+    const totalPrice = stringToNumber('total-price');
+
+    const inputFieldValue = document.getElementById( 'couponField' ).value;
+
+    const inputField = inputFieldValue.toLowerCase();    
+
+    if ( inputField === "new15") {
+        setInnerText('grand-total', totalPrice - ( totalPrice * 0.15 ) );
+    }else if( inputField === "couple 20" ){
+        setInnerText('grand-total', totalPrice - ( totalPrice * 0.20 ) )
+    }else{
+        setInnerText('grand-total', totalPrice );
+    }
+
+})
+
+

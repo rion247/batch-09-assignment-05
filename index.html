@@ -530,12 +530,8 @@
                                         </tr>
                                     </thead>
 
-                                    <tbody>
-
-                                        <tr id="resultPrint" class="flex justify-between my-4">
-
-                                        </tr>
-                                                                            
+                                    <tbody id="resultPrint">
+                                                                                                                    
                                     </tbody>
 
                                 </table>
@@ -550,10 +546,10 @@
 
                                 <div class="bg-white rounded-xl py-3 px-6 flex justify-between items-center my-6">
 
-                                    <input type="text" class="font-inter text-sm text-neutral-400 flex-1 outline-none"
+                                    <input id="couponField" type="text" class="font-inter text-sm text-neutral-400 flex-1 outline-none"
                                         placeholder="Have any copupon?">
 
-                                    <a href="#"
+                                    <a 
                                         id="apply-button" class="btn bg-secondary-color text-xl text-white rounded-xl border-0" disabled>Apply</a>
 
                                 </div>
@@ -562,7 +558,7 @@
                                     class="mt-4 pt-4 font-inter font-medium text-base text-slate-950 flex justify-between">
 
                                     <h4>Grand Total</h4>
-                                    <h4>BDT <span>0</span></h4>
+                                    <h4>BDT <span id="grand-total">0</span></h4>
 
                                 </div>
 
