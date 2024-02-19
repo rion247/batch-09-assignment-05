@@ -52,22 +52,9 @@ for (const iterator of seatBooking) {
             applyButton.removeAttribute("disabled");
 
         }
-
-        // const nextButton = document.getElementById("next-button");
-
-        // const phoneNumber = document.getElementById('phone-numberInput').value;
-
-        // if (!phoneNumber) {
-
-        //     nextButton.setAttribute("disabled");
-
-        // }else{
-
-        //     nextButton.removeAttribute("disabled");
-
-        // }
-
+        
     })
+
 }
 
 document.addEventListener('click', function grandTotal() {
@@ -78,18 +65,36 @@ document.addEventListener('click', function grandTotal() {
 
     const inputField = inputFieldValue.toLowerCase();
 
-    const coupon = document.getElementById( 'coupon' );
+    const coupon = document.getElementById('coupon');
 
     if (inputField === "new15") {
         setInnerText('grand-total', totalPrice - (totalPrice * 0.15));
-        coupon.classList.add( 'hidden' );
+        coupon.classList.add('hidden');
     } else if (inputField === "couple 20") {
         setInnerText('grand-total', totalPrice - (totalPrice * 0.20));
-        coupon.classList.add( 'hidden' );
+        coupon.classList.add('hidden');
     } else {
         setInnerText('grand-total', totalPrice);
     }
 
 })
+
+function myFuntion() {
+    
+    const nextButton = document.getElementById("next-button");
+
+    const phoneNumberString = document.getElementById('numberInput').value;
+
+    console.log( phoneNumberString );
+
+    if (phoneNumberString.charAt(0) = 0 ) {
+
+        nextButton.removeAttribute("disabled");
+
+    }
+
+}
+
+
 
 
