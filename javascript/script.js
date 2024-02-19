@@ -19,12 +19,13 @@ for (const iterator of seatBooking) {
         const ticketPrice = 550;
 
         const currentSeat = event.target.id;
-        setBackGroundColor(currentSeat);
 
         if (event.target.id == currentSeat) {
-            setBackGroundColor(currentSeat);
-        }
 
+            event.target.classList.add('pointer-events-none');
+            setBackGroundColor(currentSeat);
+
+        }
 
         const selectSeatNumber = stringToNumber('select-seat');
         const seatLeftNumber = stringToNumber('seat-left');
@@ -49,25 +50,44 @@ for (const iterator of seatBooking) {
         if (selectSeat === 4) {
 
             applyButton.removeAttribute("disabled");
+
         }
+
+        // const nextButton = document.getElementById("next-button");
+
+        // const phoneNumber = document.getElementById('phone-numberInput').value;
+
+        // if (!phoneNumber) {
+
+        //     nextButton.setAttribute("disabled");
+
+        // }else{
+
+        //     nextButton.removeAttribute("disabled");
+
+        // }
 
     })
 }
 
-document.addEventListener( 'click', function grandTotal() {
+document.addEventListener('click', function grandTotal() {
 
     const totalPrice = stringToNumber('total-price');
 
-    const inputFieldValue = document.getElementById( 'couponField' ).value;
+    const inputFieldValue = document.getElementById('couponField').value;
 
-    const inputField = inputFieldValue.toLowerCase();    
+    const inputField = inputFieldValue.toLowerCase();
 
-    if ( inputField === "new15") {
-        setInnerText('grand-total', totalPrice - ( totalPrice * 0.15 ) );
-    }else if( inputField === "couple 20" ){
-        setInnerText('grand-total', totalPrice - ( totalPrice * 0.20 ) )
-    }else{
-        setInnerText('grand-total', totalPrice );
+    const coupon = document.getElementById( 'coupon' );
+
+    if (inputField === "new15") {
+        setInnerText('grand-total', totalPrice - (totalPrice * 0.15));
+        coupon.classList.add( 'hidden' );
+    } else if (inputField === "couple 20") {
+        setInnerText('grand-total', totalPrice - (totalPrice * 0.20));
+        coupon.classList.add( 'hidden' );
+    } else {
+        setInnerText('grand-total', totalPrice);
     }
 
 })
