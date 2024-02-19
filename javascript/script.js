@@ -78,23 +78,3 @@ document.addEventListener('click', function grandTotal() {
     }
 
 })
-
-function myFuntion() {
-    
-    const nextButton = document.getElementById("next-button");
-
-    const phoneNumberString = document.getElementById('numberInput').value;
-
-    console.log( phoneNumberString );
-
-    if (phoneNumberString.charAt(0) = 0 ) {
-
-        nextButton.removeAttribute("disabled");
-
-    }
-
-}
-
-
-
-
